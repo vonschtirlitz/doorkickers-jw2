@@ -1,0 +1,371 @@
+<!--
+Possible "inventory" field values:
+	- PrimaryWeapon
+	- SecondaryWeapon
+	- Armor
+	- UtilityPouch
+	- SupportGear
+
+Possible "Class" field values:
+	- Pointman
+	- Assault
+	- Breacher
+	- Stealth
+	- Shield
+	- PointmanEnemy
+	- AssaultEnemy
+
+Possible "category" field values:
+	This is currently used to discern between weapon classes. Needed for doctrine abilities and some actions, like we can only breach a door with shotguns.
+	- pistol/rifle/shotgun/tazer
+-->
+
+<!-- all time settings are in milliseconds, unless name says otherwise -->
+<Equipment>
+	<Firearm name="TTI G34 Combat Master" inventoryBinding="SecondaryWeapon" category="pistol">
+		<Class value="Pointman"/>
+		<Class value="Assaulter"/>
+		<Class value="Breacher"/>
+		<Class value="Stealth"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<RenderObject2D texture="data/textures/gui/customization/items/g34.png"/> <!-- this is image is shown in the GUI customization page -->
+		<Skin binding="pistol"/>
+		<Description value="''Just a fuckin' dog, just a fuckin' car...''\nA trained killer chooses his tools of\nrevenge carefully. Made with German\nprecision and tuned to American speed, this\npistol points quick and offers little recoil\nthanks to the compensator."/>
+
+		<ModifiableParams
+			muzzleDropDistanceMeters=".065"
+			numPellets="1"
+			roundsPerMagazine="23"
+			roundsPerSecond="7"
+			damagePerBullet="9"
+			armorPiercingLevel="4"
+			spreadAt10Meters="0.15"
+			silenced="0"
+			shotSoundMeters="20"
+			closedBolt="1"
+
+			cyclicReload="0"
+			reloadTime="1200"
+			reloadEmptyTime="1300"
+			changeInTime="300"
+			changeOutTime="500"
+			readyTime="90"
+			guardTime="50"
+		/>		<Params
+			caliberInfoText="9x19mm"
+			operationInfoText="Semi-Auto"
+		/>
+
+		<AttackTypes>
+			<AttackType name="SWAT_EmergencyFire"/>
+			<AttackType name="JW_PistolAimedFireShort"/>
+			<AttackType name="JW_PistolAimedFire"/>
+			<AttackType name="JW_PistolAimedFireLong"/>
+			<AttackType name="JW_PistolAimedFireLongXX"/>
+		</AttackTypes>
+		
+		<MuzzleFlash muzzlePointOffset="21 -4" textureAnimation="ANIM_FX_MUZZLE_FLASH_M4">
+			<BulletTrace durationMSec="400">
+				<RenderObject2D texture="data/textures/fx/bullet_trace.dds" sizeX="512" sizeY="8" blendMode="add_masked"/>
+			</BulletTrace>
+			<Flares>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare1.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare2.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare3.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+			</Flares>
+		</MuzzleFlash>
+
+		<Sounds> <!-- max 4 variants for each action -->
+			<Equip name="SFX_1911_EQUIP"/>
+			<Unequip name="SFX_1911_UNEQP"/>
+			<Reload name="SFX_1911_RELD"/>
+			<ReloadEmpty name="SFX_1911_RELDEMPT"/>
+			<FireSingle name="SFX_G17_FIRE"/>
+			<FireSingle name="SFX_G17_FIREa"/>
+			<FireRapid name="SFX_G17_FIRE"/>
+			<FireRapid name="SFX_G17_FIREa"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPe"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPf"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPc"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPd"/>	
+		</Sounds>
+	</Firearm>
+		
+		<Firearm name="Kimber Warrior" inventoryBinding="SecondaryWeapon" category="pistol">
+		<Class value="Pointman"/>
+		<Class value="Assaulter"/>
+		<Class value="Breacher"/>
+		<Class value="Stealth"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<RenderObject2D texture="data/textures/gui/customization/items/kimberwarrior.png"/> <!-- this is image is shown in the GUI customization page -->
+		<Skin binding="pistol"/>
+		<Description value="''7 million dollars, 7 rounds''\nAdd stuff here lmao idk"/>
+
+		<ModifiableParams
+			muzzleDropDistanceMeters=".065"
+			numPellets="1"
+			roundsPerMagazine="7"
+			roundsPerSecond="4"
+			damagePerBullet="12	"
+			armorPiercingLevel="4"
+			spreadAt10Meters="0.15"
+			silenced="0"
+			shotSoundMeters="20"
+			closedBolt="1"
+
+			cyclicReload="0"
+			reloadTime="1200"
+			reloadEmptyTime="1300"
+			changeInTime="300"
+			changeOutTime="500"
+			readyTime="90"
+			guardTime="50"
+		/>
+
+		<Params
+			caliberInfoText=".45ACP"
+			operationInfoText="Semi-Auto"
+		/>
+
+		<AttackTypes>
+			<AttackType name="SWAT_EmergencyFire"/>
+			<AttackType name="JW_Pistol45AimedFireShort"/>
+			<AttackType name="JW_Pistol45AimedFire"/>
+			<AttackType name="JW_PistolAimedFireLong"/>
+			<AttackType name="JW_PistolAimedFireLongXX"/>
+		</AttackTypes>
+
+		<MuzzleFlash muzzlePointOffset="21 -4" textureAnimation="ANIM_FX_MUZZLE_FLASH_M4">
+			<BulletTrace durationMSec="400">
+				<RenderObject2D texture="data/textures/fx/bullet_trace.dds" sizeX="512" sizeY="8" blendMode="add_masked"/>
+			</BulletTrace>
+			<Flares>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare1.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare2.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare3.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+			</Flares>
+		</MuzzleFlash>
+
+		<Sounds> <!-- max 4 variants for each action -->
+			<Equip name="SFX_1911_EQUIP"/>
+			<Unequip name="SFX_1911_UNEQP"/>
+			<Reload name="SFX_1911_RELD"/>
+			<ReloadEmpty name="SFX_1911_RELDEMPT"/>
+			<FireSingle name="SFX_G17_FIRE"/>
+			<FireSingle name="SFX_G17_FIREa"/>
+			<FireRapid name="SFX_G17_FIRE"/>
+			<FireRapid name="SFX_G17_FIREa"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPe"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPf"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPc"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPd"/>	
+		</Sounds>
+	</Firearm>
+	
+	<Firearm name="TTI STI 2011 Combat Master" inventoryBinding="SecondaryWeapon" category="pistol">
+		<Class value="Pointman"/>
+		<Class value="Assaulter"/>
+		<Class value="Breacher"/>
+		<Class value="Stealth"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<RenderObject2D texture="data/textures/gui/customization/items/2011sti.png"/> <!-- this is image is shown in the GUI customization page -->
+		<Skin binding="pistol"/>
+		<Description value="''Just a fuckin' dog, just a fuckin' car...''\nA trained killer chooses his tools of\nrevenge carefully. Made with German\nprecision and tuned to American speed, this\npistol points quick and offers little recoil\nthanks to the compensator."/>
+
+		<ModifiableParams
+			muzzleDropDistanceMeters=".065"
+			numPellets="1"
+			roundsPerMagazine="24"
+			roundsPerSecond="6"
+			damagePerBullet="9"
+			armorPiercingLevel="4"
+			spreadAt10Meters="0.15"
+			silenced="0"
+			shotSoundMeters="20"
+			closedBolt="1"
+
+			cyclicReload="0"
+			reloadTime="1200"
+			reloadEmptyTime="1300"
+			changeInTime="300"
+			changeOutTime="500"
+			readyTime="90"
+			guardTime="50"
+		/>
+
+		<Params
+			caliberInfoText="9x19mm"
+			operationInfoText="Semi-Auto"
+		/>
+
+		<AttackTypes>
+			<AttackType name="SWAT_EmergencyFire"/>
+			<AttackType name="JW_PistolAimedFireShort"/>
+			<AttackType name="JW_PistolAimedFire"/>
+			<AttackType name="JW_PistolAimedFireLong"/>
+			<AttackType name="JW_PistolAimedFireLongXX"/>
+		</AttackTypes>
+		
+		<MuzzleFlash muzzlePointOffset="21 -4" textureAnimation="ANIM_FX_MUZZLE_FLASH_M4">
+			<BulletTrace durationMSec="400">
+				<RenderObject2D texture="data/textures/fx/bullet_trace.dds" sizeX="512" sizeY="8" blendMode="add_masked"/>
+			</BulletTrace>
+			<Flares>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare1.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare2.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare3.tga" sizeX="500" sizeY="500" layer="4" blendMode="add"/>
+			</Flares>
+		</MuzzleFlash>
+
+		<Sounds> <!-- max 4 variants for each action -->
+			<Equip name="SFX_1911_EQUIP"/>
+			<Unequip name="SFX_1911_UNEQP"/>
+			<Reload name="SFX_1911_RELD"/>
+			<ReloadEmpty name="SFX_1911_RELDEMPT"/>
+			<FireSingle name="SFX_1911_FIRE"/>
+			<FireSingle name="SFX_1911_FIREa"/>
+			<FireRapid name="SFX_1911_FIRE"/>
+			<FireRapid name="SFX_1911_FIREa"/>	
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPe"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPf"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPc"/>
+			<ShellDrop name="SFX_PISTOL_SHELL_DROPd"/>	
+		</Sounds>
+	</Firearm>
+	
+	<Firearm name="TTI Benelli M4" inventoryBinding="PrimaryWeapon" category="shotgun"	>
+		<Class value="Breacher"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="-7" turnSpeedLocalModifierPercent="-0	"/>
+		<RenderObject2D texture="data/textures/gui/customization/items/m4.png"/> <!-- this is image is shown in the GUI customization page -->
+		<Skin binding="shotgun"/>
+		<Description value="@firearm_joint_combat_shotgun_desc"/>
+
+		<!-- reload time is per shell when cyclicReload=true -->
+		<ModifiableParams
+			muzzleDropDistanceMeters="0.995"
+			numPellets="8"
+			roundsPerMagazine="7"
+			roundsPerSecond="5	"
+			damagePerBullet="7"
+			armorPiercingLevel="4"
+			spreadAt10Meters="0.5"
+			silenced="0"
+			shotSoundMeters="20"
+			closedBolt="1"
+
+			cyclicReload="1"
+			reloadTime="550"
+			reloadEmptyTime="400"
+			changeInTime="400"
+			changeOutTime="120"
+			readyTime="250"
+			guardTime="100"
+		/>
+
+		<Params
+			caliberInfoText="@firearm_caliber_12gauge_name"
+			operationInfoText="@firearm_operation_semiauto_name"
+		/>
+
+		<AttackTypes>
+			<AttackType name="JW_ShotgunPoint"/>
+			<AttackType name="SWAT_PumpCloseFire"/>
+			<AttackType name="JW_ShotgunClose"/>
+			<AttackType name="JW_ShotgunLong"/>
+		</AttackTypes>
+
+		<MuzzleFlash muzzlePointOffset="34 -4" textureAnimation="ANIM_FX_MUZZLE_FLASH_SHOTGUN">
+			<BulletTrace durationMSec="550">
+				<RenderObject2D texture="data/textures/fx/bullet_trace_shotgun.dds" blendMode="add_masked"/>
+			</BulletTrace>
+			<Flares>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare1.tga" sizeX="260" sizeY="260" layer="11" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare2.tga" sizeX="260" sizeY="260" layer="11" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare3.tga" sizeX="260" sizeY="260" layer="11" blendMode="add"/>
+			</Flares>
+		</MuzzleFlash>
+
+		<Sounds> <!-- max 4 variants for each action -->
+			<Equip name="SFX_M4_EQUIP"/>
+			<Unequip name="SFX_M4_UNEQP"/>
+			<Reload name="SFX_SG870_RELD"/>
+			<ReloadEmpty name="SFX_SG870_CHARGE"/>
+			<FireSingle name="SFX_JCSHOT_FIRE"/>
+			<FireSingle name="SFX_JCSHOT_FIREa"/>
+			<FireRapid name="SFX_JCSHOT_FIRE"/>
+			<FireRapid name="SFX_JCSHOT_FIREa"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPa"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPb"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPc"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPd"/>
+		</Sounds>
+	</Firearm>
+	
+	<Firearm name="TTI Benelli M2" inventoryBinding="PrimaryWeapon" category="shotgun"	>
+		<Class value="Breacher"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="-7" turnSpeedLocalModifierPercent="-0	"/>
+		<RenderObject2D texture="data/textures/gui/customization/items/m2.png"/> <!-- this is image is shown in the GUI customization page -->
+		<Skin binding="shotgun"/>
+		<Description value="A Benelli M2 customized by TTI, uses armor\n piercing slugs for cracking open the\ntoughest opponents"/>
+
+		<!-- reload time is per shell when cyclicReload=true -->
+		<ModifiableParams
+			muzzleDropDistanceMeters="0.995"
+			numPellets="1"
+			roundsPerMagazine="7"
+			roundsPerSecond="3.5	"
+			damagePerBullet="14"
+			armorPiercingLevel="6"
+			spreadAt10Meters="0.1"
+			silenced="0"
+			shotSoundMeters="20"
+			closedBolt="1"
+
+			cyclicReload="1"
+			reloadTime="550"
+			reloadEmptyTime="400"
+			changeInTime="400"
+			changeOutTime="120"
+			readyTime="250"
+			guardTime="100"
+		/>
+
+		<Params
+			caliberInfoText="@firearm_caliber_12gauge_name"
+			operationInfoText="@firearm_operation_semiauto_name"
+		/>
+
+		<AttackTypes>
+			<AttackType name="JW_ShotgunPoint"/>
+			<AttackType name="SWAT_PumpCloseFire"/>
+			<AttackType name="JW_ShotgunClose"/>
+			<AttackType name="JW_ShotgunLong"/>
+		</AttackTypes>
+
+		<MuzzleFlash muzzlePointOffset="34 -4" textureAnimation="ANIM_FX_MUZZLE_FLASH_SHOTGUN">
+			<BulletTrace durationMSec="550">
+				<RenderObject2D texture="data/textures/fx/bullet_trace_shotgun.dds" blendMode="add_masked"/>
+			</BulletTrace>
+			<Flares>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare1.tga" sizeX="260" sizeY="260" layer="11" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare2.tga" sizeX="260" sizeY="260" layer="11" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare3.tga" sizeX="260" sizeY="260" layer="11" blendMode="add"/>
+			</Flares>
+		</MuzzleFlash>
+
+		<Sounds> <!-- max 4 variants for each action -->
+			<Equip name="SFX_M4_EQUIP"/>
+			<Unequip name="SFX_M4_UNEQP"/>
+			<Reload name="SFX_SG870_RELD"/>
+			<ReloadEmpty name="SFX_SG870_CHARGE"/>
+			<FireSingle name="SFX_JCSHOT_FIRE"/>
+			<FireSingle name="SFX_JCSHOT_FIREa"/>
+			<FireRapid name="SFX_JCSHOT_FIRE"/>
+			<FireRapid name="SFX_JCSHOT_FIREa"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPa"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPb"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPc"/>
+			<ShellDrop name="SFX_SHOTGUN_SHELL_DROPd"/>
+		</Sounds>
+	</Firearm>
+</Equipment>

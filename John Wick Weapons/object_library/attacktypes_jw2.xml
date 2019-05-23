@@ -1,0 +1,151 @@
+<!-- all time settings are in milliseconds -->
+<FirearmAttackTypes>
+	<!--
+	min/maxDistanceMeters = range for when this attack type has chance of being used and also for interpolating aim time
+
+	<ModifiableParams> - all of these can be modified by abilities
+		priority = the higher the better (used when two attack types meet the distance conditions at the same time)
+		min/maxAimTime = aimTime interpolated between min/max distance to the target (minDistance = minAimTime, maxDistance = maxAimTime)
+		accuracyModifierPercent = modifier for the base accuracy of the weapon (spreadAt10Meters). value range [5..100]. 100 = exactly the weapon's base accuracy
+		followupShotAccuracyBonusPercent = adds to accuracyModiferPercent for each subsequent shot after the first one
+		minShots = greater or equal to 1. if greater, then the min number of shots will be fired, even if the target is dead.
+		maxShots = number of shots before waiting "aimTime" again. A value is chosen randomly between min/maxShots, -1 to shoot continuously
+		followupShotTime = time in-between shots. If defined (!= 0), it will overwrite the weapon's "roundsPerSecond" parameter
+		resetTime = once a shot sequence has finished, this is added to the interpolated "aimTime" before the next shot sequence begins
+	-->
+	
+	
+	<AttackType name="JW_PistolAimedFireShort">
+		<ModifiableParams
+			minDistanceMeters="1.5"
+			maxDistanceMeters="8"
+
+			priority="3"
+			minAimTime="200"
+			maxAimTime="200"
+			accuracyModifierPercent="40"
+			minShots="2"
+			maxShots="3"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="0"
+			resetTime="0"
+		/>
+	</AttackType>
+	
+	<AttackType name="JW_Pistol45AimedFireShort">
+		<ModifiableParams
+			minDistanceMeters="1.5"
+			maxDistanceMeters="8"
+
+			priority="3"
+			minAimTime="100"
+			maxAimTime="200"
+			accuracyModifierPercent="40"
+			minShots="1"
+			maxShots="2"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="0"
+			resetTime="0"
+		/>
+	</AttackType>
+	
+	<AttackType name="JW_Pistol45AimedFire">
+		<ModifiableParams
+			minDistanceMeters="8"
+			maxDistanceMeters="15"
+
+			priority="3"
+			minAimTime="375"
+			maxAimTime="500"
+			accuracyModifierPercent="80"
+			minShots="1"
+			maxShots="2"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="167"
+			resetTime="0"
+		/>
+	</AttackType>
+	
+	<AttackType name="JW_PistolAimedFireLong">
+		<ModifiableParams
+			minDistanceMeters="15"
+			maxDistanceMeters="30"
+			priority="3"
+			minAimTime="550"
+			maxAimTime="700"
+			accuracyModifierPercent="60"
+			minShots="1"
+			maxShots="1"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="0"
+			resetTime="0"
+		/>
+	</AttackType>
+	
+	
+	<AttackType name="JW_PistolAimedFireLongXX">
+		<ModifiableParams
+			minDistanceMeters="30"
+			maxDistanceMeters="9999"
+			priority="3"
+			minAimTime="700"
+			maxAimTime="800"
+			accuracyModifierPercent="30"
+			minShots="1"
+			maxShots="1"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="0"
+			resetTime="0"
+		/>
+	</AttackType>
+	
+	<AttackType name="JW_ShotgunPoint">
+		<ModifiableParams
+			minDistanceMeters="0"
+			maxDistanceMeters="5"
+
+			priority="3"
+			minAimTime="100"
+			maxAimTime="350"
+			accuracyModifierPercent="80"
+			minShots="2"
+			maxShots="-1"
+			followupShotAccuracyBonusPercent="-10"
+			followupShotTime="0"
+			resetTime="200"
+		/>
+	</AttackType>
+	
+	<AttackType name="JW_ShotgunClose">
+		<ModifiableParams
+			minDistanceMeters="5"
+			maxDistanceMeters="10"
+			priority="3"
+			minAimTime="200"
+			maxAimTime="400"
+			accuracyModifierPercent="100"
+			minShots="1"
+			maxShots="-1"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="0"
+			resetTime="200"
+		/>
+	</AttackType>
+	
+	<AttackType name="JW_ShotgunLong">
+		<ModifiableParams
+			minDistanceMeters="8"
+			maxDistanceMeters="9999"
+
+			priority="3"
+			minAimTime="600"
+			maxAimTime="900"
+			accuracyModifierPercent="80"
+			minShots="1"
+			maxShots="3"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="350"
+			resetTime="400"
+		/>
+	</AttackType>
+</FirearmAttackTypes>	
